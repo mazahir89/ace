@@ -1,0 +1,183 @@
+---
+name: Structure
+route: /structure
+---
+
+# Project structure
+The Ace component library has a different structure, because it consists of many npm repos(components and development environments). It is a monorepo, built using [Lerna](https://github.com/lerna/lerna) as base. Each components has it's own package.json file as well as version.
+
+```
+ace/
+1  ├── /docker
+2  ├── /docz
+3  ├── /packages
+4  ├── /storybook
+5  ├── /scripts
+6  ├── /webpack
+7  ├── cloudbuild.yaml
+8  ├── commitlint.config.js
+9  ├── custom.d.ts
+10 ├── lerna.json
+11 ├── package.json
+12 └── tsconfig.json
+```
+
+### 1. Docz documentation and development environment.
+
+```
+ace/docz
+├── CHANGELOG.md
+├── /assets
+├── doczrc.js
+├── /mdx
+├── package.json
+├── server.js
+└── yarn.lock
+```
+This is the primary documentation method at the point of writing this file. It is a package of it's own as well, but is is private, which means that it will not be pushed to npm or nexus registries. This is easily achievable by adding a `"private": true` key-value pair in the package.json.
+
+In the `/assets` folder you can find example assets used thoughtout the documentation, like gifs, png, svg and illustration. If there is something that you are missing, be free to add more when you are creating a pull request.
+
+In the `/mdx` folder you can find all the documentation files for all the components, as well as some addintional pages like Installation and Contribution(you are reading it now).
+
+The `doczrc.js` file is a standard way to customize the documentation environment. A full list of available properties can be found [here](https://www.docz.site/docs/project-configuration).
+
+The `server.js` file is a simple express server used to serve the environment when compiled to static assets.
+
+### 2. Components folder
+
+```
+ace/packages
+├── /Box
+├── /Component2
+├── /Component3
+└── /Component4
+```
+
+All the components are stored in the `/packages` folder as per Lerna convention. Each component, as mentioned above, is it's own package which we can upload to npmjs and/or internal nexus registries. All components have a similar structure inside as well:
+
+```
+ace/packages/Alert
+├── CHANGELOG.md
+├── /lib
+|  ├── index.d.ts
+|  ├── index.js
+|  └── index.js.map
+├── package.json
+├── /src
+|  ├── /assets
+|  |  ├── error.svg
+|  |  ├── info.svg
+|  |  ├── success.svg
+|  |  └── warning.svg
+|  ├── index.tsx
+|  └── styled.tsx
+└── tsconfig.json
+```
+
+We can easily spot 3 folders:
+  - `/src` - Where the source files should be located
+  - `/lib` - Where the build files are located
+  - `/assets` - Where all the images and illustrations should be
+
+Al well some addintional files well:
+  - `index.tsx` - This is your entry file for the build process. Component related login should be kept there. 
+  - `styled.tsx` - Where you keep all of your styled-components, needed for the component. 
+  - `tsconfig.json` - A typescript configuration file is available if changes are needed for that perticular component.
+
+### 3. Storybook documentation and development environment
+
+```
+ace/storybook
+├── CHANGELOG.md
+├── package.json
+└── /stories
+   └── button.stories.js
+```
+
+Very simular to the docz environment. All your storybook "story" files go into the `/stories` folder. Not much to say here. It is a good idea to document the component in both `storybook` and `docz` environments, but it is not a requirement for now.
+
+### 4. Scripts
+
+```
+ace/scripts
+└── /version
+   ├── docz.js
+   └── storybook.js
+```
+
+Scripts are currently used to extract the version of the 2 development environments during the CI/CD process.
+
+### 5. Webpack
+
+```
+ace/webpack
+├── webpack.common.js
+├── webpack.dev.js
+└── webpack.prod.js
+```
+
+These are the webpack configurations, with which each component will be built. It also uses the the `tsconfig.json` file to determine typescript related configuration.
+
+### 6. Husky and commitlint.config.js
+
+In order to keep the commit messages clean so that lerna can read from them and update the components version automatically we have to introduce some guard method for commiting. There comes husky and commitlint. If we check the root `package.json` file
+
+```json
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+```
+
+we can find that there is a husky configuration which will create a process when a developer creates a commit. Firstly it will check the project for any linting errors. Then it will check the commit message which the developer has specified and explain the problem in a readable way, if there is one. Then and only then it will commit. A strong anvice would be to install `commitizen` which will give you an interactive terminal window where it is very easy to commit via the convention like so:
+
+Install `commitizen` globally, if you have not already.
+
+```
+npm install -g commitizen
+```
+
+Install your preferred `commitizen` adapter globally, for example [`cz-conventional-changelog`](https://www.npmjs.com/package/cz-conventional-changelog)
+
+```
+npm install -g cz-conventional-changelog
+```
+
+Create a `.czrc` file in your `home` directory, with `path` referring to the preferred, globally installed, `commitizen` adapter
+
+```
+echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+```
+
+### 7. custom.d.ts
+
+TypeScript related file, used when you want to ignore specific folder or files from being linted by TypeScript. In the component library we use this file for ignoreing `.png, .svg and .json` files which if they were to be imported there would consoled errors which are not valid.
+
+### 8. Lerna configuration file - lerna.json
+
+This is the configuration file, which lerna uses to find the individual projects. A couple of notable properties here are:
+
+```json
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+```
+The component library works ontop of `yarn workspaces` and `yarn` itself. A truly monorepo structure, because `node_modules` are found only in the root of the project, and not in the individual inner packages.
+
+------
+
+```json
+  "version": "independent"
+```
+
+Verison - independent means that the each component will have it's own version independent from any other component, except it's related ones.
+
+### 9. package.json
+This is the root package.json. All the dependecies you add here should be devDependencies, because you will never deploy the entire monorepo. It is also private, so as much as you try it won't be very successful. It is not meant for that.
+
+P.S. Check the available `scripts`.
+
+### 10. tsconfig.json
+The master TypeScript configuration, every tsconfig inside each component inherits this one as base.

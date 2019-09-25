@@ -1,0 +1,29 @@
+{
+  "name": "@ace/docz",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Docz environment for Ace component library",
+  "main": "index.js",
+  "author": {
+    "name": "Mazahir Hashimli",
+    "linkedin": "https://www.linkedin.com/in/mazahir-hashimli-086824106/",
+    "github": "https://github.com/mazahir89"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "docz dev",
+    "build": "docz build",
+    "clean": "rm -rf .docz"
+  },
+  "devDependencies": {
+    "docz": "^1.2.0",
+    "docz-theme-default": "^1.2.0",
+    "react-docgen-typescript-loader": "^3.0.1",
+    "react-svg-loader": "^3.0.0"
+  },
+  "dependencies": {
+    "@ace/box": "^0.2.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
+  }
+}

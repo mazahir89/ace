@@ -1,0 +1,14 @@
+.idea/
+node_modules/
+stories/storybook-static
+lerna-debug.log
+_VERSION
+.DS_Store
+lib
+dist
+cache
+storybook-static
+docz/.docz
+_STORYBOOK_VERSION
+_DOCZ_VERSION
+yarn-error.log

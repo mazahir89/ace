@@ -1,0 +1,64 @@
+# Contribute
+
+Contribution is really easy in the component library. There are just a few steps needed to start the project and adding new components or editing existing ones is a straight forward process.
+
+
+## 1. Pull the project
+
+```
+git clone ssh://git@github.com:mazahir89/ace.git
+```
+
+and navigate to the project folder:
+
+```
+cd ace
+```
+
+## 2. Install dependencies
+
+```
+yarn install
+```
+
+## 3. Install lerna globally
+
+```
+yarn global add lerna
+```
+
+## 3. Bootstrap the project
+This step will like all the inner dependencies(packages folder) with node_modules. This should be also run when you add a new component because it will need to be linked as well.
+
+```
+lerna bootstrap
+```
+
+## 4. Build all the component once
+
+```
+lerna run build:doc --stream
+```
+
+## 5. Start the development environment and the component you would like to edit
+This step will like all the inner dependencies(packages folder) with node_modules. This should be also run when you add a new component because it will need to be linked as well.
+
+*On Mac and Linux*
+```
+lerna run start --parallel --scope @ace/@(docz|component_name|SOME_OTHER COMPONENT)
+```
+
+*In Windows*:
+```
+lerna run start --parallel --scope @ace/docz --scope @ace/component_name
+```
+
+## 6. Create a documentation file
+Create a new `COMPONENT.mdx` file in the `docz/mdx/Components` folder. You can check the existing once as well as read the documentation for [docz](https://www.docz.site/docs/introduction).
+
+## 7. When done just push to a feature or fix branch and create a pull request!
+Remember to commit with the semantic/conventional-changelog standard. If you don't husky(check root package.json) will not let you.
+
+## Simple as can be!
+
+

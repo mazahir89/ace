@@ -1,0 +1,27 @@
+{
+  "name": "@ace/storybook",
+  "version": "0.4.3",
+  "description": "Storybook environment for ace",
+  "main": "index.js",
+  "private": true,
+  "author": "Kristiyan Serafimov (chrispcode) (dgz)",
+  "license": "MIT",
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "build": "build-storybook"
+  },
+  "dependencies": {
+    "@storybook/addon-actions": "^4.1.13",
+    "@storybook/addon-links": "^4.1.13",
+    "@storybook/addons": "^4.1.13",
+    "@storybook/react": "^4.1.13",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.3"
+  },
+  "devDependencies": {
+    "@emotion/core": "0.x.x",
+    "@emotion/styled": "^0.10.6"
+  },
+  "gitHead": "dbaf241adcef8dc0a9275f4aa1214954b2c408f5"
+}

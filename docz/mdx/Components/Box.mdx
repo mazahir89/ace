@@ -1,0 +1,44 @@
+---
+name: Box
+route: /box
+menu: Components
+---
+
+import { Playground, Props } from 'docz';
+import Box from '@ace/box';
+import { version as BoxVersion } from '@ace/box/package.json'
+
+# Box
+<span>Current version: {BoxVersion}</span>
+
+```js
+
+import Box from '@ace/box';
+
+```
+
+### `All style(React.CSSProperties) as props`
+
+### **Important!**
+Don't overuse this component. It is not designed 
+for all-purpose use, because of the use of inline styles!
+The rule of thumb is to use it when you have to create
+a small adjustment to a text or align multiple components.
+A good example of this is the [Lens](/lens) component,
+where the details value at the bottom is a Box because
+the text is bold!
+
+<Playground>
+  <Box
+    color="orangered"
+    backgroundColor="midnightblue"
+    padding-left="24px"
+  >
+    I am a box!
+  </Box>
+</Playground>
+
+
+
+
+

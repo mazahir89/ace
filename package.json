@@ -1,0 +1,74 @@
+{
+  "name": "ace",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Ace component library",
+  "author": {
+    "name": "Mazahir Hashimli",
+    "linkedin": "https://www.linkedin.com/in/mazahir-hashimli-086824106/",
+    "github": "https://github.com/mazahir89"
+  },
+  "workspaces": [
+    "packages/*",
+    "docz",
+    "storybook"
+  ],
+  "scripts": {
+    "start:docz": "lerna run start --scope @ace/docz --stream",
+    "build": "lerna run build --ignore '@ace/@(storybook|docz)' --stream",
+    "build:docz": "lerna run --scope @ace/docz build --stream",
+    "build:storybook": "lerna run --scope @ace/storybook build",
+    "version:docz": "node ./scripts/version/docz",
+    "version:storybook": "node ./scripts/version/storybook",
+    "lint": "eslint . --ext .tsx --ext .ts",
+    "clean": "lerna run clean --ignore '@ace/@(storybook|docz)' --stream"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@emotion/core": "^10.0.7",
+    "@types/styled-components": "^4.1.10",
+    "@typescript-eslint/eslint-plugin": "^1.4.0",
+    "@typescript-eslint/parser": "^1.4.0",
+    "ajv": "^6.9.2",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-styled-components": "^1.10.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "core-js": "3",
+    "emotion-theming": "^10.0.7",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "focus-trap-react": "^6.0.0",
+    "husky": "^2.2.0",
+    "lerna": "^3.13.0",
+    "lottie-web": "^5.4.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-docgen-typescript-loader": "^3.0.1",
+    "react-dom": "^16.8.3",
+    "react-spring": "^8.0.9",
+    "react-svg-loader": "^3.0.0",
+    "semantic-release": "^15.13.3",
+    "styled-components": "^4.2.0",
+    "ts-loader": "^6.0.0",
+    "typescript": "3.2.4",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.29.5",
+    "webpack-bundle-analyzer": "^3.0.4",
+    "webpack-cli": "^3.2.3",
+    "webpack-merge": "^4.2.1",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}

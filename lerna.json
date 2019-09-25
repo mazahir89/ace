@@ -1,0 +1,26 @@
+{
+  "packages": [
+    "packages/*",
+    "docz",
+    "storybook"
+  ],
+  "ignoreChanges": [
+    "docz/package.json",
+    "docz/CHANGELOG.md",
+    "packages/*/CHANGELOG.md",
+    "packages/*/package.json"
+  ],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "stream": true,
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "message": "chore(release): release, check description for versions [skip ci]"
+    },
+    "version": {
+      "push": false
+    }
+  }
+}
