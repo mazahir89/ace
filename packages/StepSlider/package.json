@@ -1,7 +1,7 @@
 {
-  "name": "@ace/box",
+  "name": "@ace/stepSlider",
   "version": "0.1.0",
-  "description": "Box component for the Ace component library",
+  "description": "StepSlider component for the Ace component library",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "author": {

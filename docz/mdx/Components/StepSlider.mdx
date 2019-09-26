@@ -1,0 +1,41 @@
+---
+name: StepSlider
+route: /stepSlider
+menu: Components
+---
+
+import { Playground, Props } from 'docz';
+import StepSlider from '@ace/stepSlider';
+import { version as StepSliderVersion } from '@ace/stepSlider/package.json'
+
+# StepSlider
+<span>Current version: {StepSliderVersion}</span>
+
+```js
+
+import StepSlider from '@ace/stepSlider';
+
+
+
+
+```
+
+<Playground>
+  {
+    () => {
+
+      const steps = [
+        { label: "Weak", value: "0" },
+        { label: "Normal", value: "1" },
+        { label: "Strong", value: "2" },
+        { label: "Very Strong", value: "3" }
+      ];
+
+      return (
+
+        <StepSlider steps={steps}></StepSlider>
+      )
+
+    }
+  }
+</Playground>
