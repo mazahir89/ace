@@ -1,10 +1,14 @@
 {
   "name": "@ace/storybook",
-  "version": "0.4.3",
+  "version": "0.1.0",
   "description": "Storybook environment for ace",
   "main": "index.js",
   "private": true,
-  "author": "Kristiyan Serafimov (chrispcode) (dgz)",
+  "author": {
+    "name": "Mazahir Hashimli",
+    "linkedin": "https://www.linkedin.com/in/mazahir-hashimli-086824106/",
+    "github": "https://github.com/mazahir89"
+  },
   "license": "MIT",
   "scripts": {
     "start": "start-storybook -p 6006",

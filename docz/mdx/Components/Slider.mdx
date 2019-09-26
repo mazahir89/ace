@@ -1,0 +1,33 @@
+---
+name: Slider
+route: /slider
+menu: Components
+---
+
+import { useState } from 'react';
+import { Playground, Props } from 'docz';
+import Slider from '@ace/slider';
+import { version } from '@ace/slider/package.json'
+
+# Slider
+<span>Current version: {version}</span>
+
+```js
+
+import Slider from '@ace/slider';
+
+```
+<Props of={Slider} />
+
+### Props - `All html button props`
+
+## Basic
+<Playground>
+  <Slider
+    min={1000}
+    max={10000}
+    initial={4000}
+    step={1000}
+    onChange={(currentValue) => { console.log(currentValue)}}
+  />
+</Playground>

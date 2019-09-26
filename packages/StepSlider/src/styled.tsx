@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import { motion } from "framer-motion";
+import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Wrap = styled.div`
   cursor: pointer;
@@ -49,9 +49,8 @@ export const Step = styled.button<StepProps>`
   z-index: 0;
   box-shadow: 0 0 0 4px white;
   outline: none;
-  ${({ passed }) =>
-    passed &&
-    css`
+  ${({ passed }) => passed
+    && css`
       background: #1976d2;
       box-shadow: none;
       z-index: 1;

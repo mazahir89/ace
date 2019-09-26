@@ -1,0 +1,31 @@
+{
+  "name": "@ace/slider",
+  "version": "0.1.0",
+  "description": "Slider component for the Ace component library",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "author": {
+    "name": "Mazahir Hashimli",
+    "linkedin": "https://www.linkedin.com/in/mazahir-hashimli-086824106/",
+    "github": "https://github.com/mazahir89"
+  },
+  "license": "MIT",
+  "files": [
+    "lib",
+    "package.json",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "start": "webpack --watch --config=../../webpack/webpack.dev.js",
+    "build": "webpack --config=../../webpack/webpack.prod.js",
+    "build:doc": "webpack --config=../../webpack/webpack.dev.js",
+    "clean": "rm -rf lib"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "styled-components": "^4.1.3",
+    "react-measure": "^2.3.0",
+    "react-spring": "^8.0.9",
+    "react-use-gesture": "^5.0.2"
+  }
+}

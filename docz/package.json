@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@ace/box": "^0.1.0",
+    "@ace/slider": "^0.1.0",
     "@ace/stepSlider": "^0.1.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"

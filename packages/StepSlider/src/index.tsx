@@ -1,12 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
-import Measure from "react-measure";
+import React, { useState, useRef, useEffect } from 'react';
+import Measure from 'react-measure';
 import {
   useAnimation,
   useMotionValue,
   useSpring,
   transform
-} from "framer-motion";
-import * as styled from "./styled";
+} from 'framer-motion';
+import * as styled from './styled';
 
 interface Step {
   label: string;
@@ -103,7 +103,7 @@ function StepSlider({ steps }: Props) {
   const controls = useAnimation();
 
   useEffect(() => {
-    animatedPosition.onChange(x => {
+    animatedPosition.onChange((x) => {
       setPositionValue(x);
     });
   });
@@ -130,7 +130,7 @@ function StepSlider({ steps }: Props) {
   return (
     <Measure
       bounds
-      onResize={contentRect => {
+      onResize={(contentRect) => {
         setWidth(contentRect.bounds.width);
       }}
     >
