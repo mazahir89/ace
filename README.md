@@ -1,3 +1,12 @@
+# Ace Component Library
+### React application
+## Components:
+
+### - Step Slider
+
+![step-slider](https://user-images.githubusercontent.com/11331836/65676305-f214d300-e04f-11e9-962d-43da4edabd86.gif)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
