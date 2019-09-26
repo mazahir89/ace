@@ -8,6 +8,7 @@
     "linkedin": "https://www.linkedin.com/in/mazahir-hashimli-086824106/",
     "github": "https://github.com/mazahir89"
   },
+  "license": "MIT",
   "workspaces": [
     "packages/*",
     "docz",
