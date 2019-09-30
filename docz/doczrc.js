@@ -21,7 +21,7 @@ export default {
       ]
     }
   },
-  wrapper: path.resolve(__dirname, "Wrapper.js"),
+  //wrapper: path.resolve(__dirname, "Wrapper.js"),
   menu: ["Installation", "Components"],
   codeSandbox: false,
   modifyBundlerConfig: config => {

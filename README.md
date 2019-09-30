@@ -4,6 +4,12 @@
 
 ## Components:
 
+### -Input
+
+![input](https://user-images.githubusercontent.com/11331836/65875984-a8e2bd00-e388-11e9-9758-8c90b1d062a7.gif)
+
+![input_with_error](https://user-images.githubusercontent.com/11331836/65876007-b5671580-e388-11e9-9702-0472d74482b1.JPG)
+
 ### -Slider
 
 ![slider](https://user-images.githubusercontent.com/11331836/65688752-edf6ae80-e06b-11e9-87f4-c37498f67a64.gif)
