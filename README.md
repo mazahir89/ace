@@ -6,9 +6,8 @@
 
 ### -Input
 
-![input](https://user-images.githubusercontent.com/11331836/65875984-a8e2bd00-e388-11e9-9758-8c90b1d062a7.gif)
+![input](https://user-images.githubusercontent.com/11331836/65875984-a8e2bd00-e388-11e9-9758-8c90b1d062a7.gif) ![input_with_error](https://user-images.githubusercontent.com/11331836/65876751-4985ac80-e38a-11e9-874b-7110e4e01dbe.JPG)
 
-![input_with_error](https://user-images.githubusercontent.com/11331836/65876007-b5671580-e388-11e9-9702-0472d74482b1.JPG)
 
 ### -Slider
 
