@@ -4,11 +4,12 @@ const babelrc = path.resolve("../", ".babelrc");
 
 export default {
   // theme: 'theme.jsx',
-  title: "@ace",
+  title: "🂡 ACE",
   description: "Ace component library",
   themeConfig: {
+    mode: "light",
     colors: {
-      primary: "#DA291C"
+      primary: "#3273dc"
     }
   },
   htmlContext: {
