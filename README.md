@@ -8,6 +8,9 @@
 
 ![input](https://user-images.githubusercontent.com/11331836/65875984-a8e2bd00-e388-11e9-9758-8c90b1d062a7.gif) ![input_with_error](https://user-images.githubusercontent.com/11331836/65876751-4985ac80-e38a-11e9-874b-7110e4e01dbe.JPG)
 
+### -Select
+
+![select](https://user-images.githubusercontent.com/11331836/65965995-cdf62f00-e45f-11e9-93d3-a41d92acc8c7.gif)
 
 ### -Slider
 

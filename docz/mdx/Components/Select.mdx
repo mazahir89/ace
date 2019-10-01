@@ -1,0 +1,75 @@
+---
+name: Select
+route: /select
+menu: Components
+---
+
+import { useState } from 'react';
+import { Playground, Props } from 'docz';
+import Select from '@ace/select';
+import { version } from '@ace/select/package.json'
+
+# Select
+<span>Current version: {version}</span>
+
+
+```js
+
+import Select from '@ace/select';
+
+```
+
+<Props of={Select} />
+
+
+## Not Required (Default)
+
+<Playground>
+  <Select
+    name="city"
+    label="Favourite city?"
+    options={[
+      { key: 'Paris', value: 'paris' },
+      { key: 'London', value: 'london' },
+      { key: 'Rome', value: 'rome' }
+    ]}
+    onChange={(name, option) => console.log(name, option)}
+  />
+</Playground>
+
+---
+
+## Required
+
+<Playground>
+  <Select
+    required
+    name="city"
+    label="Favourite city?"
+    options={[
+      { key: 'Paris', value: 'paris' },
+      { key: 'London', value: 'london' },
+      { key: 'Rome', value: 'rome' }
+    ]}
+    onChange={(name, option) => console.log(name, option)}
+  />
+</Playground>
+
+---
+
+## With error
+
+<Playground>
+  <Select
+    required
+    name="city"
+    label="Favourite city?"
+    options={[
+     { key: 'Paris', value: 'paris' },
+      { key: 'London', value: 'london' },
+      { key: 'Rome', value: 'rome' }
+    ]}
+    onChange={(name, option) => console.log(name, option)}
+    error="You have to select one!"
+  />
+</Playground>
