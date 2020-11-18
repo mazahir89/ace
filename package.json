@@ -59,7 +59,7 @@
     "react-measure": "^2.3.0",
     "react-spring": "^8.0.9",
     "react-svg-loader": "^3.0.0",
-    "semantic-release": "^15.13.3",
+    "semantic-release": "^17.2.3",
     "styled-components": "^4.2.0",
     "ts-loader": "^6.0.0",
     "typescript": "^3.6.3",
